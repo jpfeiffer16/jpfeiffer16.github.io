@@ -35,17 +35,26 @@
 			<!-- <textarea id="text"></textarea> -->
 		    <textarea id="editor" class="txtarea uiElement">-- A Pig-Latin Translator :-) ---
 	-- Joe Pfeiffer 2014 --
-	&gt;,[&gt;,]&gt;&gt;&gt;+++++++++[-&lt;++++++++++&lt;++++++++++&gt;&gt;]&lt;+++++++++++++++++++++++++++++++&lt;+++++++&lt;&lt;[&lt;]&gt;&gt;[.&gt;]&lt;[&lt;]&gt;.[&gt;]&gt;[.&gt;]</textarea>
+&gt;,[&gt;,]&gt;&gt;&gt;+++++++++[-&lt;++++++++++&lt;++++++++++&gt;&gt;]&lt;+++++++++++++++++++++++++++++++&lt;+++++++&lt;&lt;[&lt;]&gt;&gt;[.&gt;]&lt;[&lt;]&gt;.[&gt;]&gt;[.&gt;]</textarea>
 		    <br>
 		    <h4 id="inputlabel" class="text">Input:</h4>
-		    <textarea id="input" class="txtarea uiElement">Mary</textarea>
+		    <textarea id="input" class="txtarea uiElement">Bob</textarea>
 		    <br><br>
 		    <button onclick="runBF()" class="uiElement">Run</button>
 		    <button onclick="saveProg()" class="uiElement">Save</button>
-		    <h4 id="output" class="text visToggle">Output:</h4>
-		    <p id="display" class="visToggle">This is the output of your program</p>
-		    <h4 id="debugLabel" class="text">Degbug:</h4>
-		    <p id="debug"></p>
+		   	<button onclick="BFScript('Mary')" class="uiElement">Run</button>
+
+		    <h5 class="inline">Output Array:</h5>
+		    <input type="checkbox" class="inline" id="debugCheck">
+		    <h5 class="inline">Compile to Javascript:</h5>
+		    <input type="checkbox" class="inline" id="javascriptCheck">
+		    <div id="visTog">
+			    <h4 id="output" class="text visToggle">Output:</h4>
+			    <p id="display" class="visToggle">This is the output of your program</p>
+			    <h4 id="debugLabel" class="text">Degbug:</h4>
+			    <p id="debug"></p>
+			    <p id="jtag"></p>
+			</div>
 	    </div>
     </div>
 </body>

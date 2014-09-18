@@ -16,6 +16,11 @@ function runBF() {
     var input = document.getElementById("input").value;
     editorInput = document.getElementById("editor").value;
 
+    if (document.getElementById("javascriptCheck").checked == true) {
+        compileJs(editorInput);
+        return;
+    }
+
     initializePoint(pointer.length);
     output.style.visibility = "visible"
     outputLabel.style.visibility = "visible"
@@ -84,13 +89,60 @@ function runBF() {
     if(output.innerHTML == "" || output.innerHTML == null) {
         output.innerHTML = "Your program had no output to show";
     }
-    debug.innerHTML = pointer;
+    if (document.getElementById("debugCheck").checked == true) {
+        debug.innerHTML = pointer.toString();
+    }
 }
 
 function initializePoint(plen) {
     for( var i = 0; i<plen; i = i + 1){
         pointer[i] = 0;
     }
+}
+
+// for(i = 0; i<=3000 ; i = i +1) {
+//     pointer[i] = 0;
+// }
+
+function compileJs(inp) {
+    alert("Compiling to Javascript");
+    var initialCode = "function BFScript(input) {" + String.fromCharCode(11) + "  var pointer = new Array(3000);" + String.fromCharCode(11) +
+        "  var pointerPos = 0, output = '', inputPos = 0;" + String.fromCharCode(11) + "for(i = 0; i<=3000 ; i = i +1) {" 
+        + String.fromCharCode(11) + "pointer[i] = 0;" + String.fromCharCode(11) + "}", bchar, jstring = ""
+        , closingCode = "return output;" + String.fromCharCode(11) + "}";
+    var jtag = document.getElementById("jtag");
+    // jtag.innerHTML = initialCode;
+    //jstring = initialcode;
+    for(k = 0; k <= inp.length; k = k + 1) {
+        bchar = inp.charAt(k);
+        if (bchar == "+") {
+            jstring = jstring + String.fromCharCode(11) + "  pointer[pointerPos] = pointer[pointerPos] + 1;";
+        }
+        if (bchar == "-") {
+            jstring = jstring + String.fromCharCode(11) + "  pointer[pointerPos] = pointer[pointerPos] - 1;";
+        }
+        if (bchar == ">") {
+            jstring = jstring + String.fromCharCode(11) + "  pointerPos = pointerPos + 1;";
+        }
+        if (bchar == "<") {
+            jstring = jstring + String.fromCharCode(11) + "  pointerPos = pointerPos - 1;";
+        }
+        if (bchar == "[") {
+            jstring = jstring + String.fromCharCode(11) + "  while(pointer[pointerPos] !== 0){";
+        }
+        if (bchar == "]") {
+            jstring = jstring + String.fromCharCode(11) + "}";
+        }
+        if (bchar == ".") {
+            jstring = jstring + String.fromCharCode(11) + "output = output + String.fromCharCode(pointer[pointerPos]);";
+        }
+        if (bchar == ",") {
+            jstring = jstring + String.fromCharCode(11) + "if(inputPos < input.length) {" + String.fromCharCode(11) +
+                "pointer[pointerPos] = input.charCodeAt(inputPos); inputPos = inputPos + 1;" + String.fromCharCode(11) +
+                "} else {" + String.fromCharCode(11) + "pointer[pointerPos] = 0;" + String.fromCharCode(11) + "}";
+        }
+    }
+    jtag.innerHTML = initialCode + String.fromCharCode(11) + jstring + String.fromCharCode(11) + closingCode;
 }
 
 function loadProgs() {
@@ -150,4 +202,35 @@ function saveProg() {
 function initPage(){
     document.getElementById("version").innerHTML = "v" + version.toString();
     loadProgs();
+}
+
+function BFScript(input) { 
+ var pointer = new Array(3000); 
+ var pointerPos = 0, output = "", inputPos = 0; 
+ alert(input);
+  pointerPos = pointerPos + 1; 
+if(inputPos < input.length) { 
+pointer[pointerPos] = input.charCodeAt(inputPos); inputPos = inputPos + 1; 
+} else { 
+pointer[pointerPos] = 0; 
+} 
+//alert("good");
+ while(pointer[pointerPos] !== 0){ 
+    //alert("loop");
+ pointerPos = pointerPos + 1; 
+if(inputPos < input.length) { 
+pointer[pointerPos] = input.charCodeAt(inputPos); inputPos = inputPos + 1; 
+} else { 
+pointer[pointerPos] = 0; 
+} 
+} 
+ pointerPos = pointerPos - 1; 
+ while(pointer[pointerPos] !== 0){ 
+    //alert("loop2");
+output = output + String.fromCharCode(pointer[pointerPos]); 
+alert(output);
+ pointerPos = pointerPos - 1; 
+}
+alert(pointer);
+return output;
 }
