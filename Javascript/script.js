@@ -100,9 +100,7 @@ function initializePoint(plen) {
     }
 }
 
-// for(i = 0; i<=3000 ; i = i +1) {
-//     pointer[i] = 0;
-// }
+
 
 function compileJs(inp) {
     alert("Compiling to Javascript");
@@ -204,19 +202,36 @@ function initPage(){
     loadProgs();
 }
 
+function BFDebugRun(input) {
+    var res = BFScript(input);
+    alert(res);
+}
+
 function BFScript(input) { 
  var pointer = new Array(3000); 
- var pointerPos = 0, output = "", inputPos = 0; 
- alert(input);
-  pointerPos = pointerPos + 1; 
+ var pointerPos = 0, output = '', inputPos = 0; 
+for(i = 0; i<=3000 ; i = i +1) { 
+pointer[i] = 0; 
+} 
+
+  pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
+ pointerPos = pointerPos + 1; 
 if(inputPos < input.length) { 
 pointer[pointerPos] = input.charCodeAt(inputPos); inputPos = inputPos + 1; 
 } else { 
 pointer[pointerPos] = 0; 
 } 
-//alert("good");
  while(pointer[pointerPos] !== 0){ 
-    //alert("loop");
  pointerPos = pointerPos + 1; 
 if(inputPos < input.length) { 
 pointer[pointerPos] = input.charCodeAt(inputPos); inputPos = inputPos + 1; 
@@ -224,13 +239,114 @@ pointer[pointerPos] = input.charCodeAt(inputPos); inputPos = inputPos + 1;
 pointer[pointerPos] = 0; 
 } 
 } 
- pointerPos = pointerPos - 1; 
+ pointerPos = pointerPos + 1; 
+ pointerPos = pointerPos + 1; 
+ pointerPos = pointerPos + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ alert("first while");
  while(pointer[pointerPos] !== 0){ 
-    //alert("loop2");
-output = output + String.fromCharCode(pointer[pointerPos]); 
-alert(output);
+ pointer[pointerPos] = pointer[pointerPos] - 1; 
  pointerPos = pointerPos - 1; 
-}
-alert(pointer);
-return output;
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointerPos = pointerPos - 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointerPos = pointerPos + 1; 
+ pointerPos = pointerPos + 1; 
+} 
+alert("after the first while");
+ pointerPos = pointerPos - 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointerPos = pointerPos - 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointer[pointerPos] = pointer[pointerPos] + 1; 
+ pointerPos = pointerPos - 1; 
+ pointerPos = pointerPos - 1; 
+ alert("second while");
+ while(pointer[pointerPos] !== 0){ 
+ pointerPos = pointerPos - 1; 
+} 
+ pointerPos = pointerPos + 1; 
+ pointerPos = pointerPos + 1; 
+ alert("3 while");
+ while(pointer[pointerPos] !== 0){ 
+output = output + String.fromCharCode(pointer[pointerPos]); 
+ pointerPos = pointerPos + 1; 
+} 
+ pointerPos = pointerPos - 1; 
+ alert("4 while");
+ while(pointer[pointerPos] !== 0){ 
+ pointerPos = pointerPos - 1; 
+} 
+ pointerPos = pointerPos + 1; 
+output = output + String.fromCharCode(pointer[pointerPos]); 
+ while(pointer[pointerPos] !== 0){ 
+ pointerPos = pointerPos + 1; 
+} 
+ pointerPos = pointerPos + 1; 
+ while(pointer[pointerPos] !== 0){ 
+output = output + String.fromCharCode(pointer[pointerPos]); 
+ pointerPos = pointerPos + 1; 
+} 
+return output; 
 }
